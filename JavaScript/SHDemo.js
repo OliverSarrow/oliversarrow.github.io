@@ -9,7 +9,7 @@ form.addEventListener("submit", (e) => {
 	console.log("submittion received");
 	var sMsgInput = msgInput.value
 	// the link to the next chapter if correct
-	var sJumpTo = sMsgInput + ".html";
+	var sJumpTo = "html/" + sMsgInput + ".html";
 
 	// redirect
 	window.location.href = sJumpTo;
