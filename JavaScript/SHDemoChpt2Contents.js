@@ -1,4 +1,4 @@
-import countapi from'https://cdn.jsdelivr.net/gh/mlomb/countapi-js/package.json';
+import { countapi } from 'https://cdn.jsdelivr.net/npm/countapi-js/file';
 // import countapi from 'countapi-js';
 // const countapi = require('countapi-js');
 
