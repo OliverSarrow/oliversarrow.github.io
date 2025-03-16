@@ -1,4 +1,5 @@
-import countapi from 'countapi-js';
+import countapi from 'https://cdn.jsdelivr.net/gh/mlomb/countapi-js';
+// import countapi from 'countapi-js';
 // const countapi = require('countapi-js');
 
 countapi.visits().then((result) => {
