@@ -3,7 +3,7 @@
 // Had to copy it here because we're trying to avoid introducing nodejs...
 // TODO: Transfer this to nodeJS import.
 
-import * as crossfetch from 'https://cdn.jsdelivr.net/npm/cross-fetch/'
+import * as crossfetch from 'https://cdn.jsdelivr.net/npm/cross-fetch'
 // const crossfetch = require('cross-fetch');
 
 const BASE_API_PATH = "https://api.countapi.xyz";
