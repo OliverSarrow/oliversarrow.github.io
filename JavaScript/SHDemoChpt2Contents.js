@@ -1,4 +1,5 @@
-import * as countapi from 'https://cdn.jsdelivr.net/npm/countapi-js/index.js';
+const countapi = require('https://cdn.jsdelivr.net/npm/countapi-js/index.js');
+// import * as countapi from 'https://cdn.jsdelivr.net/npm/countapi-js/index.js';
 // import countapi from 'countapi-js';
 // const countapi = require('countapi-js');
 
