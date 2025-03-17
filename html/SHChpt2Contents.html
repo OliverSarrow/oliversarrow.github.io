@@ -7,13 +7,6 @@
         <title>SH Demo</title>
         <script type="module" async src="../JavaScript/SHDemoChpt2Contents.js"></script>
         
-        <script>
-            function cb(response) {
-                document.getElementById('visits').innerText = response.value;
-            }
-        </script>
-        <script async src="https://api.countapi.xyz/hit/oliversarrow-SHChpt2Contents/visits?callback=cb"></script>
-        
         <link rel="stylesheet" href="../Styles/Styles.css" />
         
     </head>
@@ -43,10 +36,7 @@
 
         <button onclick="location.href = '../index.html';"> Return to Chpt 1 </button>
 
-        <div id="visits"> For the visits counter </div>
-
-   
-    
+        
     </body>
 
 </html>
