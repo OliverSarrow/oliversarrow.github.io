@@ -1,8 +1,18 @@
+//import countapi from "countapi-js";
+// documentation: https://www.npmjs.com/package/countapi-js
+
 document.getElementById('date').innerHTML = new Date().toDateString();
 
 const form = document.getElementById('form');
 const msgInput = document.getElementById('msgInput');
 // const hidden = document.getElementById("hidden");
+
+// log how many ppl visited this page
+/*
+countapi.visits().then((result) => {
+	console.log("count-api visited", result.value);
+});
+*/
 
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
