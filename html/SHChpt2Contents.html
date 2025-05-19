@@ -12,6 +12,8 @@
         <script type="module" async src="https://cdn.jsdelivr.net/npm/countapi-js/index.js"></script>
         
         -->
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         
         <script> 
             var exports = {};
@@ -44,6 +46,26 @@
         </div>
 
         <button onclick="location.href = '../index.html';"> Return to Chpt 1 </button>
+
+        <p></p>
+
+        <form method="post">
+            <input type="button" value="Send Email" onclick="sendEmail()" />
+        </form>
+
+        <script type="text/javascript">
+            function sendEmail() {
+                Email.send({
+                    SecureToken : "1e92d8f8-f24d-4378-9b0b-8a3905f1c211",
+                    To: 'sarrowoliver@gmail.com',
+                    From: "thethousandsonsarchivalproject@gmail.com",
+                    Subject: "ProjectSH - ending 2 reached",
+                    Body: "You have reached ending 2",
+                }).then(function (message) {
+                        alert("mail sent successfully")
+                    });
+            }
+        </script>
 
         
     </body>
