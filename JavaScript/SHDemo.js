@@ -17,9 +17,24 @@ countapi.visits().then((result) => {
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	console.log("submittion received");
-	var sMsgInput = msgInput.value
+	var sMsgInput = msgInput.value;
+	var sJumpTo = "";
+	
+	var sMsgInputToLower = sMsgInput.toLowerCase();
+
 	// the link to the next chapter if correct
-	var sJumpTo = "html/" + sMsgInput + ".html";
+	sJumpTo = "html/" + sMsgInputToLower + ".html";
+
+	// TODO: remove this if-else statement on official release.
+	// We don't want users to find the demo page...
+	if( (sMsgInput.length > 2) && (sMsgInput.slice(0, 2) == "SH") ){
+		// if begins with SH - this is a test demo page
+		console.log("test demo - do not convert to Lowercase");
+		sJumpTo = "html/" + sMsgInput + ".html";
+	}
+
+	console.log("sJumpTo", sJumpTo)
+
 
 	// redirect
 	window.location.href = sJumpTo;
