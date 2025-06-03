@@ -6,24 +6,39 @@
         
         <title>SH Demo</title>
 
-        <!--
-        
-        <script src="bundle.js"></script>
-        <script type="module" async src="https://cdn.jsdelivr.net/npm/countapi-js/index.js"></script>
-        
+        <!--       
+            switching to emailJS. 
+            https://www.jsdelivr.com/package/npm/@emailjs/browser
         -->
-
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        
-        <script> 
-            var exports = {};
-            if (typeof module === 'object') {
-                module.exports = functions;
-            }
-        </script>
         <script type="module" async src="../JavaScript/SHDemoChpt2Contents.js"></script>
         
         <link rel="stylesheet" href="../Styles/Styles.css" />
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init({
+                publicKey: "_uDK6OR7cQAcu2rxc",
+                });
+            })();
+        </script>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('template_fgudvw1').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // service id, template id
+                    emailjs.sendForm('service_dxg4jop', 'template_fgudvw1', this)
+                        .then(() => {
+                            console.log('SUCCESS!');
+                        }, (error) => {
+                            console.log('FAILED...', error);
+                        });
+                });
+            }
+        </script>
         
     </head>
 
@@ -40,7 +55,7 @@
 
         <div align = "left">
             <p>
-                Hidden truths -- Who knows what will become of the future?
+                &nbsp; &nbsp; &nbsp; &nbsp; Hidden truths -- Who knows what will become of the future?
             </p>
           
         </div>
@@ -49,24 +64,14 @@
 
         <p></p>
 
-        <form method="post">
-            <input type="button" value="Send Email" onclick="sendEmail()" />
+        <form id="template_fgudvw1">
+            <!-- To simplify the tutorial, the value is static. -->
+        
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <input type="submit" value="Send">
         </form>
-
-        <script type="text/javascript">
-            function sendEmail() {
-                Email.send({
-                    SecureToken : "9a64dcdb-09c3-4b42-8160-4fd9d9566714",
-                    To: 'sarrowoliver@gmail.com',
-                    From: "thethousandsonsarchivalproject@gmail.com",
-                    Subject: "ProjectSH - ending 2 reached",
-                    Body: "You have reached ending 2",
-                }).then(function (message) {
-                        alert("mail sent successfully")
-                    });
-            }
-        </script>
-
         
     </body>
 
