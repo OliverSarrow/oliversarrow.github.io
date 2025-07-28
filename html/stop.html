@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+    
+    <head>
+        
+        <title>SacredHunger</title>
+        <!--       
+            switching to emailJS. 
+            https://www.jsdelivr.com/package/npm/@emailjs/browser
+        -->
+        
+        <link rel="stylesheet" href="../Styles/Styles.css" />
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init({
+                publicKey: "nSCrkcykp_570qX2u",
+                });
+            })();
+        </script>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('template_0eu1rod').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // service id, template id, {parameter}
+                    emailjs.send("service_qrqokpr","template_0eu1rod",{
+                        end: "stop",
+                    }).then(() => {
+                            console.log('SUCCESS!');
+                            alert(` 01:524288- BD
+                                    Hawser 78251
+                                    STOP
+                                    10:00 AM 25/08/25`);
+                        }, (error) => {
+                            console.log('FAILED...', error);
+                            alert("Message failed.");
+                        });
+                });
+            }
+        </script>
+        
+    </head>
+
+
+    <body>
+        
+        
+        <p> 78251# </p>
+
+        <p> Thank you for calling Multi-line message, goodbye. </p>
+
+        <p></p>
+
+        <form id="template_0eu1rod">
+            <input type="submit" value="END">
+        </form>
+
+        <p></p>
+
+        <button onclick="location.href = '../index.html';"> Return to DIAL </button>
+
+        
+    </body>
+
+</html>

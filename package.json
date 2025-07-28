@@ -1,0 +1,28 @@
+{
+  "name": "oliversarrow.github.io",
+  "version": "1.0.0",
+  "description": "for ProjectSH",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliverSarrow/oliversarrow.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliverSarrow/oliversarrow.github.io/issues"
+  },
+  "homepage": "https://github.com/OliverSarrow/oliversarrow.github.io#readme",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
