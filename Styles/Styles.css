@@ -2,6 +2,7 @@ body {
   text-align: center;
   background-color: #a7b99c;
   color: #484b52;
+  font-family: "Inconsolata", monospace;
 }
 
 #hidden {
@@ -12,4 +13,5 @@ body {
 button {
   color: #484b52;
   background-color: #a7b99c;
+  font-family: "Inconsolata", monospace;
 }
