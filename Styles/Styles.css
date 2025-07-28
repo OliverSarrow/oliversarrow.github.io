@@ -1,9 +1,15 @@
 body {
   text-align: center;
-  background-color: #f0e8c5;
+  background-color: #a7b99c;
+  color: #484b52;
 }
 
 #hidden {
   text-align: left;
   opacity: 0;
+}
+
+button {
+  color: #484b52;
+  background-color: #a7b99c;
 }
