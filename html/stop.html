@@ -25,6 +25,18 @@
 
         <script type="text/javascript">
             window.onload = function() {
+                const dialResponse = document.getElementById("dialResponse");
+                const dialResponseCloseButton = document.getElementById("dialResponseClose");
+                dialResponseCloseButton.addEventListener('click', () => {
+                    dialResponse.close();
+                });
+
+                const dialFailedResponse = document.getElementById("dialFailedResponse");
+                const dialFailedResponseCloseButton = document.getElementById("dialFailedResponseClose");
+                dialFailedResponseCloseButton.addEventListener('click', () => {
+                    dialFailedResponse.close();
+                });
+
                 document.getElementById('template_0eu1rod').addEventListener('submit', function(event) {
                     event.preventDefault();
                     // service id, template id, {parameter}
@@ -32,10 +44,10 @@
                         end: "stop",
                     }).then(() => {
                             console.log('SUCCESS!');
-                            alert(`\n ▲ \n 01:524288- BD \n Hawser 78251 \n STOP \n 10:00 AM 25/08/25`);
+                            dialResponse.showModal();
                         }, (error) => {
                             console.log('FAILED...', error);
-                            alert("Message failed.");
+                            dialFailedResponse.showModal();
                         });
                 });
             }
@@ -45,6 +57,32 @@
 
 
     <body>
+
+        <dialog id="dialResponse">
+            
+            <p>▲</p>
+            <p>01:524288- BD</p>
+            <p>Hawser 78251</p>
+            <p>STOP</p>
+            <p>10:00 AM 25/08/25</p>
+
+            <br></br>
+
+            <button id="dialResponseClose" alignment="right">x</button>
+
+        </dialog>
+
+
+        <dialog id="dialFailedResponse">
+            
+            <p>▲</p>
+            <p>Warp distortion...</p>
+
+            <br></br>
+
+            <button id="dialFailedResponseClose">x</button>
+
+        </dialog>
         
         
         <p> 78251# </p>

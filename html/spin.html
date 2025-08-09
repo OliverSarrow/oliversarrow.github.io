@@ -5,6 +5,10 @@
     <head>
         
         <title>SacredHunger</title>
+
+        <!-- TODO: Refactoring in the future. Bad coding style. 
+                    I'm just at least having things running -->
+
         <!--       
             switching to emailJS. 
             https://www.jsdelivr.com/package/npm/@emailjs/browser
@@ -13,7 +17,7 @@
         <link rel="stylesheet" href="../Styles/Styles.css" />
 
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        
+
         <script type="text/javascript">
             (function() {
                 // https://dashboard.emailjs.com/admin/account
@@ -25,18 +29,33 @@
 
         <script type="text/javascript">
             window.onload = function() {
+                const dialResponse = document.getElementById("dialResponse");
+                const dialResponseCloseButton = document.getElementById("dialResponseClose");
+                dialResponseCloseButton.addEventListener('click', () => {
+                    dialResponse.close();
+                });
+
+                const dialFailedResponse = document.getElementById("dialFailedResponse");
+                const dialFailedResponseCloseButton = document.getElementById("dialFailedResponseClose");
+                dialFailedResponseCloseButton.addEventListener('click', () => {
+                    dialFailedResponse.close();
+                });
+
+
                 document.getElementById('template_0eu1rod').addEventListener('submit', function(event) {
+                    
                     event.preventDefault();
                     // service id, template id, {parameter}
                     emailjs.send("service_qrqokpr","template_0eu1rod",{
                         end: "spin",
                     }).then(() => {
                             console.log('SUCCESS!');
-                            alert(`\n ▲ \n 01:2097152- BD \n "Hawser" 21748 \n SPIN \n 10:00AM 25/08/25`);
+                            dialResponse.showModal();
                         }, (error) => {
                             console.log('FAILED...', error);
-                            alert("Message failed.");
+                            dialFailedResponse.showModal();
                         });
+                    
                 });
             }
         </script>
@@ -45,6 +64,32 @@
 
 
     <body>
+
+        <dialog id="dialResponse">
+            
+            <p>▲</p>
+            <p>01:2097152- BD</p>
+            <p>"Hawser" 21748</p>
+            <p>SPIN</p>
+            <p>10:00AM 25/08/25</p>
+
+            <br></br>
+
+            <button id="dialResponseClose" alignment="right">x</button>
+
+        </dialog>
+
+
+        <dialog id="dialFailedResponse">
+            
+            <p>▲</p>
+            <p>Warp distortion...</p>
+
+            <br></br>
+
+            <button id="dialFailedResponseClose">x</button>
+
+        </dialog>
         
         
         <p> 21748# </p>
