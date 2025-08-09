@@ -38,15 +38,20 @@
                 });
 
                 document.getElementById('template_0eu1rod').addEventListener('submit', function(event) {
+                    
+                    document.getElementById("loadingText").innerHTML = `Connecting...`;
+
                     event.preventDefault();
                     // service id, template id, {parameter}
                     emailjs.send("service_qrqokpr","template_0eu1rod",{
                         end: "stop",
                     }).then(() => {
-                            console.log('SUCCESS!');
+                            // console.log('SUCCESS!');
+                            document.getElementById("loadingText").innerHTML = ``;
                             dialResponse.showModal();
                         }, (error) => {
-                            console.log('FAILED...', error);
+                            // console.log('FAILED...', error);
+                            document.getElementById("loadingText").innerHTML = ``;
                             dialFailedResponse.showModal();
                         });
                 });
@@ -94,6 +99,10 @@
         <form id="template_0eu1rod">
             <input type="submit" value="END">
         </form>
+
+        <br></br>
+
+        <div id="loadingText"></div>
         
     </body>
 
